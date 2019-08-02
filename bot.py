@@ -51,8 +51,8 @@ def main(client, message):
         time.sleep(e.x)
 @app.on_message(Filters.command('clear') & Filters.user(491634139))
 def forward(client, message):
- fie = open("ids.txt","w")
- fie.write("001 002")
- fie.close()
- message.reply("☢️ Done, Editing data cleared ✅✅")
+  with open("ids.txt","w") as fie:
+   fie.write("001 002")
+   fie.close()
+   message.reply("☢️ Done, Editing data cleared ✅✅")
 app.run()
