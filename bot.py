@@ -5,19 +5,9 @@ app = Client ("ssss",bot_token="845406847:AAGN2pODnH_IOUjS7PIEfePxn4XXQcv2YFY",a
 bullet = -1001378725482                                              
 ferrari = -1001274887387                                             
 k = -1001472962317
-
-message.text.replace("🇩🇪","🇳🇮").replace("🎾","🥎").replace("🖲","🧤").replace("📟","🛑").replace("WD","🔷 WIDE BALL 🔷").replace("/","~").replace("CHALU RAKHO","GAME STARTED, PLAYERS ON THE STEDIUM ").replace("NB","🔷 NO BALL 🔷")
-  
-
-@app.on_message(Filters.chat(ferrari) & ~ Filters.edited)
-def main(client, message):
- mes = client.send_message( k, "**" + message.text.replace("🇩🇪","🇸🇱").replace("🎾","🥎").replace("🖲","👨‍🎨").replace("📟","🏮").replace("WD","🔰 WIDE BALL 🔰").replace("/","🔸").replace("CHALU RAKHO","🔶 GAME STARTED 🔶, PLAYERS ON THE STEDIUM ").replace("NB","♦️ NO BALL ♦️") + "**" )
- fie = open("ids.txt","a")
- fie.write(" " + str(message.message_id) + " " + str(mes.message_id))
- fie.close()
 @app.on_message(Filters.chat(bullet) & ~ Filters.edited)
 def main(client, message):
- mes = client.send_message( k, "**" + message.text + "**" )
+ mes = client.send_message( k, "**" + message.text.replace("🇩🇪","🇸🇱").replace("🎾","🥎").replace("🖲","👨‍🎨").replace("📟","🏮").replace("WD","🔰 WIDE BALL 🔰").replace("/","🔸").replace("CHALU RAKHO","🔶 GAME STARTED 🔶, PLAYERS ON THE STEDIUM ").replace("NB","♦️ NO BALL ♦️") + "**" )
  fie = open("ids.txt","a")
  fie.write(" " + str(message.message_id) + " " + str(mes.message_id))
  fie.close()
@@ -37,6 +27,12 @@ def main(client, message):
       client.edit_message_text(k,int(x[x.index(id)+1]), "**" + message.text.replace("🇩🇪","🇸🇱").replace("🎾","🥎").replace("🖲","👨‍🎨").replace("📟","🏮").replace("WD","🔰 WIDE BALL 🔰").replace("/","🔸").replace("CHALU RAKHO","🔶 GAME STARTED 🔶, PLAYERS ON THE STEDIUM ").replace("NB","♦️ NO BALL ♦️") + "**" )
    except FloodWait as e:
      time.sleep(e.x)
+@app.on_message(Filters.chat(ferrari) & ~ Filters.edited)
+def main(client, message):
+ mes = client.send_message( k, "**" + message.text + "**" )
+ fie = open("ids.txt","a")
+ fie.write(" " + str(message.message_id) + " " + str(mes.message_id))
+ fie.close()
 @app.on_message(Filters.chat(ferrari) & Filters.edited)
 def main(client, message):
    files = open("ids.txt" , "r")
