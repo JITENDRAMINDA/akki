@@ -1,13 +1,13 @@
 from pyrogram import Client, Filters
 import time
 from pyrogram.errors import FloodWait
-app = Client ("ssss",bot_token="845406847:AAGN2pODnH_IOUjS7PIEfePxn4XXQcv2YFY",api_id=814511,api_hash="44462f0f278503255d5cc30941b617a9")                                   
+app = Client ("ssss",bot_token="890077588:AAF5O8SGsliDMSRCGQUEUchBlzAMIs0qTgo",api_id=814511,api_hash="44462f0f278503255d5cc30941b617a9")                                   
 bullet = -1001378725482                                              
 ferrari = -1001274887387                                             
-k = -1001472962317
+k = -1001365164207
 @app.on_message(Filters.chat(bullet) & ~ Filters.edited)
 def main(client, message):
- mes = client.send_message( k, "**" + message.text.replace("🇩🇪","🇸🇱").replace("🎾","🥎").replace("🖲","👨‍🎨").replace("📟","🏮").replace("WD","🔰 WIDE BALL 🔰").replace("/","🔸").replace("CHALU RAKHO","🔶 GAME STARTED 🔶, PLAYERS ON THE STEDIUM ").replace("NB","♦️ NO BALL ♦️") + "**" )
+ mes = client.send_message( k, "**" + message.text.replace("🇩🇪","🇱🇸").replace("🎾","🥎").replace("🖲","🧸").replace("📟","📮").replace("WD","🏷️ WIDE BALL 🏷️").replace("/","🔹").replace("CHALU RAKHO","💠 GAME STARTED 💠, PLAYERS ON THE STEDIUM ").replace("NB","⚕️ NO BALL ⚕️") + "**" )
  fie = open("ids.txt","a")
  fie.write(" " + str(message.message_id) + " " + str(mes.message_id))
  fie.close()
