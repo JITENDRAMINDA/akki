@@ -16,6 +16,6 @@ def main(client, message):
  elif 'DRINKS BREAK' in message.text:
   client.send_sticker(message.chat.id,'CAADBQADJQAD271NHRSHuFn7xmbvAg')
  elif 'WIDE' in message.text:
-  client.send_sticker(int(u),'CAADBQADHgAD271NHUFx5PgLyzp9Ag')
+  client.send_sticker(message.chat.id,'CAADBQADHgAD271NHUFx5PgLyzp9Ag')
 
 app.run()
