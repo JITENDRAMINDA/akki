@@ -18,7 +18,7 @@ def forward(client, message):
    files.write(" " + str(message.message_id) +  " " + str(mes.message_id))
    files.close()  
   else:
-   mes = client.send_message(d,message.text.replace("🇩🇪","🇮🇩").replace("📟","🥁").replace("WD","WD✔️✔️").replace("LGANA","LAGANA").replace("TIME OUT ✔️✔️","🕰 TIME OUT 🕰").replace("🅿️🅰💲💲✔️✔️","🅿️🅰️💲💲🔚").replace("🕵️‍♀️","🔍"))
+   mes = client.send_message(d,message.text.replace("🇩🇪","🇮🇩").replace("📟","🥁").replace("WD","WD✔️✔️").replace("LGANA","LAGANA").replace("TIME OUT ✔️✔️","🕰 TIME OUT 🕰").replace("🅿️🅰💲💲✔️✔️","🅿️🅰️💲💲🔚").replace("🕵️‍♀️","🔍").replace(" WICKET "," WICKET WICKET ").replace ("🔹BOTH🔹","  BOTH ✔️✔️") )
    files = open("sure.txt" , "a")
    files.write(" " + str(message.message_id) +  " " + str(mes.message_id))
    files.close()  
@@ -35,7 +35,7 @@ def forward(client, message):
     if "🖲" in message.text:
      client.edit_message_text(d,int(x[x.index(id)+1]),message.text.replace("🇩🇪","🇮🇩").replace("🕵️‍♀️","🔍") + "⛳️")
     else:
-     client.edit_message_text(d,int(x[x.index(id)+1]),message.text.replace("🇩🇪","🇮🇩").replace("📟","🥁").replace("WD","WD✔️✔️").replace("LGANA","LAGANA").replace("TIME OUT ✔️✔️","🕰 TIME OUT 🕰").replace("🅿️🅰💲💲✔️✔️","🅿️🅰️💲💲🔚").replace("🕵️‍♀️","🔍"))
+     client.edit_message_text(d,int(x[x.index(id)+1]),message.text.replace("🇩🇪","🇮🇩").replace("📟","🥁").replace("WD","WD✔️✔️").replace("LGANA","LAGANA").replace("TIME OUT ✔️✔️","🕰 TIME OUT 🕰").replace("🅿️🅰💲💲✔️✔️","🅿️🅰️💲💲🔚").replace("🕵️‍♀️","🔍").replace(" WICKET "," WICKET WICKET ").replace ("🔹BOTH🔹","  BOTH ✔️✔️") )
    except FloodWait as e:
     time.sleep(e.x)
 @app.on_deleted_messages(Filters.chat(s))
