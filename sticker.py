@@ -6,9 +6,8 @@ app = Client ("ssss",bot_token="959566620:AAFq_Rc8jlpttg3MZauPsW5yuKrApoL_x58",a
 @app.on_message(Filters.channel)
 def main(client, message):
  if message.text == "6":
-  client.send_sticker(int(u),'CAADBQADHAAD271NHXPgZgboyWwDAg')
+  client.send_sticker(message.chat.id,'CAADBQADHAAD271NHXPgZgboyWwDAg')
  elif message.text == "4":
-  client.send_sticker(int(u),'CAADBQADGwAD271NHWpGz0fJOgEPAg')
+  client.send_sticker(message.chat.id,'CAADBQADGwAD271NHWpGz0fJOgEPAg')
 
- 
 app.run()
