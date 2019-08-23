@@ -9,5 +9,13 @@ def main(client, message):
   client.send_sticker(message.chat.id,'CAADBQADHAAD271NHXPgZgboyWwDAg')
  elif message.text == "4":
   client.send_sticker(message.chat.id,'CAADBQADGwAD271NHWpGz0fJOgEPAg')
+ elif "WICKET" in message.text:
+  client.send_sticker(message.chat.id,'CAADBQADHQAD271NHQimFHP2bU9cAg')
+ elif message.sticker.file_id == 'CAADBQADFAQAAlrCoBKRHyVMca5GGQI' :
+  client.send_sticker(message.chat.id,'CAADBQADHwAD271NHQtXw-moeKYWAg')
+ elif 'DRINKS BREAK' in message.text:
+  client.send_sticker(message.chat.id,'CAADBQADJQAD271NHRSHuFn7xmbvAg')
+ elif 'WIDE' in message.text:
+  client.send_sticker(int(u),'CAADBQADHgAD271NHUFx5PgLyzp9Ag')
 
 app.run()
