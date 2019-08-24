@@ -7,21 +7,15 @@ d = -1001129914210
 @app.on_message(Filters.chat(s) & Filters.text & ~Filters.edited)
 def forward(client, message):
  f = False
- words = ["kab","mani"," id","स",'dekho',"TRUST",'fix','😱','😳','👆','👇','match','pass','chase','defend','Surendra','karva','link','loss','audio','varna','open','paid','contact','baazigar','market','load','whatsapp','book','teen','diya','bhai',"🐴",'🥺','🖕','member','only','chut','lund','gand','ma ','maa ','bhosdi','bahan','loude','lode','lavde','chutiya','☝️','mkc','bc','madarchod','bahanchod','gandu','❓','kya','line',"https://",'bullet','🤔','LUND'," LU","?","loda","lode","lodu","telegram","chor","join"]
+ words = ["kab","mani"," id","स",'dekho',"TRUST",'fix','😱','😳','👆','👇','match','pass','chase','defend','karva','link','loss','audio','varna','open','paid','contact','baazigar','market','load','whatsapp','book','teen','diya','bhai',"🐴",'🥺','🖕','member','only','chut','lund','gand','ma ','maa ','bhosdi','bahan','loude','lode','lavde','chutiya','☝️','mkc','bc','madarchod','bahanchod','gandu','❓','kya','line',"https://",'bullet','🤔','LUND'," LU","?","loda","lode","lodu","telegram","chor","join"]
  for word in words:
   if word.casefold() in message.text.casefold():
    f = True
  if not f:
-  if "🖲" in message.text:
-   mes = client.send_message(d,message.text.replace("🇩🇪","🇮🇩").replace("🖲","🧚‍♂️") + "⛳️")
-   files = open("sure.txt" , "a")
-   files.write(" " + str(message.message_id) +  " " + str(mes.message_id))
-   files.close()  
-  else:
-   mes = client.send_message(d,message.text.replace("🇩🇪","🇮🇩").replace("📟","🥁").replace("WD","WD✔️✔️").replace("LGANA","LAGANA").replace("TIME OUT ✔️✔️","🕰 TIME OUT 🕰").replace("🅿️🅰💲💲✔️✔️","🅿️🅰️💲💲🔚").replace("🕵️‍♀️","🔍").replace(" WICKET "," WICKET WICKET ").replace ("🔹BOTH🔹","BOTH ✔️✔️") )
-   files = open("sure.txt" , "a")
-   files.write(" " + str(message.message_id) +  " " + str(mes.message_id))
-   files.close()  
+  mes = client.send_message(d, message.text.replace("🇩🇪","🇮🇩").replace("📟","🥁").replace("WD","WD✔️✔️").replace("LGANA","LAGANA").replace("TIME OUT ✔️✔️","🕰 TIME OUT 🕰").replace("🅿️🅰💲💲✔️✔️","🅿️🅰️💲💲🔚").replace("🕵️‍♀️","🔍").replace(" WICKET "," WICKET WICKET ").replace("🔹BOTH🔹","BOTH✔️✔️").replace("NB","NO BALL✔️✔️").replace("OVER 🖲","OVER 🧚‍♂️⛳️").replace("OVER  🖲","OVER  🧚‍♂️⛳️").replace("OVER   🖲","OVER   🧚‍♂️⛳️").replace("🖲","🧚‍♂️"))
+  files = open("sure.txt" , "a")
+  files.write(" " + str(message.message_id) +  " " + str(mes.message_id))
+  files.close()  
 @app.on_message(Filters.chat(s) & Filters.text & Filters.edited)
 def forward(client, message):
  file = open("sure.txt" , "r")
@@ -32,10 +26,7 @@ def forward(client, message):
   id = str(message.message_id)
   if id in x:
    try:
-    if "🖲" in message.text:
-     client.edit_message_text(d,int(x[x.index(id)+1]),message.text.replace("🇩🇪","🇮🇩").replace("🖲️","🧚‍♂️") + "⛳️")
-    else:
-     client.edit_message_text(d,int(x[x.index(id)+1]),message.text.replace("🇩🇪","🇮🇩").replace("📟","🥁").replace("WD","WD✔️✔️").replace("LGANA","LAGANA").replace("TIME OUT ✔️✔️","🕰 TIME OUT 🕰").replace("🅿️🅰💲💲✔️✔️","🅿️🅰️💲💲🔚").replace("🕵️‍♀️","🔍").replace(" WICKET "," WICKET WICKET ").replace ("🔹BOTH🔹","BOTH✔️✔️").replace("NB","NO BALL✔️✔️") )
+    client.edit_message_text(d,int(x[x.index(id)+1]),message.text.replace("🇩🇪","🇮🇩").replace("📟","🥁").replace("WD","WD✔️✔️").replace("LGANA","LAGANA").replace("TIME OUT ✔️✔️","🕰 TIME OUT 🕰").replace("🅿️🅰💲💲✔️✔️","🅿️🅰️💲💲🔚").replace("🕵️‍♀️","🔍").replace(" WICKET "," WICKET WICKET ").replace("🔹BOTH🔹","BOTH✔️✔️").replace("NB","NO BALL✔️✔️").replace("OVER 🖲️","OVER 🧚‍♂️⛳️").replace("OVER  🖲","OVER  🧚‍♂️⛳️").replace("OVER   🖲","OVER   🧚‍♂️⛳️").replace("🖲","🧚‍♂️"))
    except FloodWait as e:
     time.sleep(e.x)
 @app.on_deleted_messages(Filters.chat(s))
