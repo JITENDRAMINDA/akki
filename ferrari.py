@@ -1,9 +1,9 @@
 from pyrogram import Client, Filters,Emoji
 from pyrogram.errors import FloodWait
 import time
-app = Client("baaz",869912,"a7b049e08df35464047d57e5134327e5")
-s = -1001262096355
-d = -1001129914210
+app = Client("ssss",bot_token="839678284:AAEb1D-EroMEA-VUuoSxp2CPYNd53hdPCh8",api_id=814511,api_hash="44462f0f278503255d5cc30941b617a9")
+s = -1001188569481
+d = -1001110523823
 @app.on_message(Filters.chat(s) & Filters.text & ~Filters.edited)
 def forward(client, message):
  f = False
@@ -12,7 +12,7 @@ def forward(client, message):
   if word.casefold() in message.text.casefold():
    f = True
  if not f:
-  mes = client.send_message(d, message.text.replace("🇩🇪","🇮🇩").replace("📟","🥁").replace("WD","WD✔️✔️").replace("LGANA","LAGANA").replace("TIME OUT ✔️✔️","🕰 TIME OUT 🕰").replace("🅿️🅰💲💲✔️✔️","🅿️🅰️💲💲🔚").replace("🕵️‍♀️","🔍").replace(" WICKET "," WICKET WICKET ").replace ("🔹BOTH🔹","BOTH✔️✔️").replace("NB","NO BALL✔️✔️").replace( "🖲️","🧚‍♂️").replace("OVER 🖲️","OVER 🧚‍♂️⛳️").replace("OVER  🖲️","OVER  🧚‍♂️⛳️").replace("OVER   🖲️","OVER   🧚‍♂️⛳️") )
+  mes = client.send_message(d, message.text.replace("🇩🇪","🇮🇩").replace("📟","🥁").replace("WD","WD✔️✔️").replace("LGANA","LAGANA").replace("TIME OUT ✔️✔️","🕰 TIME OUT 🕰").replace("🅿️🅰💲💲✔️✔️","🅿️🅰️💲💲🔚").replace("🕵️‍♀️","🔍").replace(" WICKET "," WICKET WICKET ").replace ("🔹BOTH🔹","BOTH✔️✔️").replace("NB","NO BALL✔️✔️").replace( "🖲️","🧚‍♂️").replace("OVER 🖲️","OVER 🧚‍♂️⛳️").replace("OVER  🖲️","OVER  🧚‍♂️⛳️"))
   files = open("sure.txt" , "a")
   files.write(" " + str(message.message_id) +  " " + str(mes.message_id))
   files.close()  
@@ -27,7 +27,7 @@ def forward(client, message):
   id = str(message.message_id)
   if id in x:
    try:
-    client.edit_message_text(d,int(x[x.index(id)+1]),message.text.replace("🇩🇪","🇮🇩").replace("📟","🥁").replace("WD","WD✔️✔️").replace("LGANA","LAGANA").replace("TIME OUT ✔️✔️","🕰 TIME OUT 🕰").replace("🅿️🅰💲💲✔️✔️","🅿️🅰️💲💲🔚").replace("🕵️‍♀️","🔍").replace(" WICKET "," WICKET WICKET ").replace ("🔹BOTH🔹","BOTH✔️✔️").replace("NB","NO BALL✔️✔️") )
+    client.edit_message_text(d,int(x[x.index(id)+1]),message.text.replace("🇩🇪","🇮🇩").replace("📟","🥁").replace("WD","WD✔️✔️").replace("LGANA","LAGANA").replace("TIME OUT ✔️✔️","🕰 TIME OUT 🕰").replace("🅿️🅰💲💲✔️✔️","🅿️🅰️💲💲🔚").replace("🕵️‍♀️","🔍").replace(" WICKET "," WICKET WICKET ").replace ("🔹BOTH🔹","BOTH✔️✔️").replace("NB","NO BALL✔️✔️").replace( "🖲️","🧚‍♂️").replace("OVER 🖲️","OVER 🧚‍♂️⛳️").replace("OVER  🖲️","OVER  🧚‍♂️⛳️") )
    except FloodWait as e:
     time.sleep(e.x)
 @app.on_deleted_messages(Filters.chat(s))
