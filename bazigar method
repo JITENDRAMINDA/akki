@@ -1,0 +1,10 @@
+  if "🖲" in message.text:
+   mes = client.send_message(d,message.text.replace("🇩🇪","🇮🇩").replace("🖲","🧚‍♂️") + "⛳️")
+   files = open("sure.txt" , "a")
+   files.write(" " + str(message.message_id) +  " " + str(mes.message_id))
+   files.close()  
+  else:
+   mes = client.send_message(d,message.text.replace("🇩🇪","🇮🇩").replace("📟","🥁").replace("WD","WD✔️✔️").replace("LGANA","LAGANA").replace("TIME OUT ✔️✔️","🕰 TIME OUT 🕰").replace("🅿️🅰💲💲✔️✔️","🅿️🅰️💲💲🔚").replace("🕵️‍♀️","🔍").replace(" WICKET "," WICKET WICKET ").replace ("🔹BOTH🔹","BOTH ✔️✔️") )
+   files = open("sure.txt" , "a")
+   files.write(" " + str(message.message_id) +  " " + str(mes.message_id))
+   files.close()
