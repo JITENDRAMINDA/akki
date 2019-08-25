@@ -16,9 +16,8 @@ def main(client, message):
  elif 'WIDE' in message.text:
   client.send_sticker(message.chat.id,'CAADBQADHgAD271NHUFx5PgLyzp9Ag')
 
-@app.on_message(Filters.chat(Filters.private & Filters.sticker)
+@app.on_message(Filters.private & Filters.sticker)
 def forawrd(client, message):
-  client.send_sticker(message.chat.id,'CAADBQADHwAD271NHQtXw-moeKYWAg')
   client.send_message(message.chat.id,message.sticker.file_id )
 
 
