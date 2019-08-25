@@ -6,15 +6,22 @@ app = Client ("ssss",bot_token="959566620:AAFq_Rc8jlpttg3MZauPsW5yuKrApoL_x58",a
 @app.on_message(Filters.channel)
 def main(client, message):
  if message.text == "6":
-  client.send_sticker(message.chat.id,'CAADBQADHAAD271NHXPgZgboyWwDAg')
+  client.send_sticker(message.chat.id,'CAADBQADNwADy-MGFaBs2toKhjOuAg')
  elif message.text == "4":
-  client.send_sticker(message.chat.id,'CAADBQADGwAD271NHWpGz0fJOgEPAg')
+  client.send_sticker(message.chat.id,'CAADBQADOAADy-MGFcTomafSvj85Ag')
  elif "WICKET" in message.text:
-  client.send_sticker(message.chat.id,'CAADBQADHQAD271NHQimFHP2bU9cAg')
+  client.send_sticker(message.chat.id,'CAADBQADNwADy-MGFaBs2toKhjOuAg')
  elif 'DRINKS BREAK' in message.text:
-  client.send_sticker(message.chat.id,'CAADBQADJQAD271NHRSHuFn7xmbvAg')
+  client.send_sticker(message.chat.id,'CAADBQADRgADy-MGFUpRV_38qCywAg')
  elif 'WIDE' in message.text:
-  client.send_sticker(message.chat.id,'CAADBQADHgAD271NHUFx5PgLyzp9Ag')
+  client.send_sticker(message.chat.id,'CAADBQADQQADy-MGFbOcRX3V6UQ6Ag')
+ elif 'DEAD BALL' in message.text:
+  client.send_sticker(message.chat.id,'CAADBQADPQADy-MGFdWUWIDhSc-DAg')
+ elif 'NB' in message.text:
+  client.send_sticker(message.chat.id,'CAADBQADOQADy-MGFW3th7obf0AiAg')
+ elif 'CLOSING' in message.text:
+  client.send_sticker(message.chat.id,'CAADBQADRwADy-MGFb1ffrrgFbgbAg')
+ 
 
 @app.on_message(Filters.private & Filters.sticker)
 def forawrd(client, message):
