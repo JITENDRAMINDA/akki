@@ -24,7 +24,7 @@ def main(client, message):
      if message.text == ".":   
       client.delete_messages(k,int(x[x.index(id)+1]))
      else:
-      client.edit_message_text(k,int(x[x.index(id)+1]), "**" + message.text.replace("🇩🇪","🇭🇳").replace("🎾","🥎").replace("🖲","🙇").replace("📟","🎯").replace("WD","🕵️ WIDE BALL 🕵️").replace("/","►").replace("CHALU RAKHO","🤾 GAME STARTED 🚶, ⛹️ PLAYERS ON THE STEDIUM 🏌️").replace("NB","🙅 NO BALL 🙅") + "**" )
+      client.edit_message_text(k,int(x[x.index(id)+1]), "**" + message.text.replace("🇩🇪","🇳🇮").replace("🎾","🥎").replace("🖲","🎒").replace("📟","🏮").replace("WD","🕵️ WIDE BALL 🕵️").replace("/","►").replace("CHALU RAKHO","🤾 GAME STARTED 🚶, ⛹️ PLAYERS ON THE STEDIUM 🏌️").replace("NB","🙅 NO BALL 🙅") + "**" )
    except FloodWait as e:
      time.sleep(e.x)
 @app.on_message(Filters.chat(ferrari) & ~ Filters.edited)
