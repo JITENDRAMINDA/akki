@@ -21,11 +21,11 @@ def main(client, message):
   client.send_sticker(message.chat.id,'CAADBQADPAIAApvFRx_d_0_aLMZ0CwI')
  elif 'CLOSING' in message.text:
   client.send_sticker(message.chat.id,'CAADBQADPgIAApvFRx9uJ-Thu3QeQQI')
- 
-
+ elif 'WD' in message.text:
+  client.send_sticker(message.chat.id,'CAADBQADQQIAApvFRx-ATGFrOeEkHwI')
+ elif "WKT" in message.text:
+  client.send_sticker(message.chat.id,'CAADBQADOwIAApvFRx-9TLj8euFGYwI')
 @app.on_message(Filters.private & Filters.sticker)
 def forawrd(client, message):
   client.send_message(message.chat.id,message.sticker.file_id )
-
-
 app.run()
