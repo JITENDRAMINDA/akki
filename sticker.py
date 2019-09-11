@@ -10,7 +10,7 @@ def main(client, message):
  elif message.text == "4":
   client.send_sticker(message.chat.id,'CAADBQADOAADy-MGFcTomafSvj85Ag')
  elif "WICKET" in message.text:
-  client.send_sticker(message.chat.id,'CAADBQADNwADy-MGFaBs2toKhjOuAg')
+  client.send_sticker(message.chat.id,'CAADBQADQgADy-MGFQKaDFrV7dM4Ag')
  elif 'DRINKS BREAK' in message.text:
   client.send_sticker(message.chat.id,'CAADBQADRgADy-MGFUpRV_38qCywAg')
  elif 'WIDE' in message.text:
