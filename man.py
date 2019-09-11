@@ -1,9 +1,9 @@
 from pyrogram import Client, Filters,Emoji
 from pyrogram.errors import FloodWait
 import time
-app = Client("baaz",869912,"a7b049e08df35464047d57e5134327e5")
+app = Client("mcc",715451,"d2cba6f7bf5d1a45682da5bb9071a307")
 s = -1001262096355
-d = -1001129914210
+d = -1001289914295
 @app.on_message(Filters.chat(s) & Filters.text & ~Filters.edited)
 def forward(client, message):
  f = False
@@ -12,7 +12,7 @@ def forward(client, message):
   if word.casefold() in message.text.casefold():
    f = True
  if not f:
-  mes = client.send_message(d, message.text.replace("🇩🇪","🇮🇩").replace("📟","🥁").replace("WD","WD✔️✔️").replace("LGANA","LAGANA").replace("TIME OUT ✔️✔️","🕰 TIME OUT 🕰").replace("🅿️🅰💲💲✔️✔️","🅿️🅰️💲💲🔚").replace("🕵️‍♀️","🔍").replace(" WICKET "," WICKET WICKET ").replace("🔹BOTH🔹","BOTH✔️✔️").replace("NB","NO BALL✔️✔️").replace("OVER 🖲","OVER 🧚‍♂️⛳️").replace("OVER  🖲","OVER  🧚‍♂️⛳️").replace("OVER   🖲","OVER   🧚‍♂️⛳️").replace("🖲","🧚‍♂️"))
+  mes = client.send_message(d,message.text)
   files = open("sure.txt" , "a")
   files.write(" " + str(message.message_id) +  " " + str(mes.message_id))
   files.close()  
@@ -26,7 +26,7 @@ def forward(client, message):
   id = str(message.message_id)
   if id in x:
    try:
-    client.edit_message_text(d,int(x[x.index(id)+1]),message.text.replace("🇩🇪","🇮🇩").replace("📟","🥁").replace("WD","WD✔️✔️").replace("LGANA","LAGANA").replace("TIME OUT ✔️✔️","🕰 TIME OUT 🕰").replace("🅿️🅰💲💲✔️✔️","🅿️🅰️💲💲🔚").replace("🕵️‍♀️","🔍").replace(" WICKET "," WICKET WICKET ").replace("🔹BOTH🔹","BOTH✔️✔️").replace("NB","NO BALL✔️✔️").replace("OVER 🖲️","OVER 🧚‍♂️⛳️").replace("OVER  🖲","OVER  🧚‍♂️⛳️").replace("OVER   🖲","OVER   🧚‍♂️⛳️").replace("🖲","🧚‍♂️"))
+    client.edit_message_text(d,int(x[x.index(id)+1]),message.text)
    except FloodWait as e:
     time.sleep(e.x)
 @app.on_deleted_messages(Filters.chat(s))
