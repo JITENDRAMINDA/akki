@@ -2,12 +2,12 @@ from pyrogram import Client, Filters,Emoji
 from pyrogram.errors import FloodWait
 import time
 app = Client("mcc",715451,"d2cba6f7bf5d1a45682da5bb9071a307")
-s = -1001100924541
-d = -1001453099412
+s = -1001262096355
+d = -1001289914295
 @app.on_message(Filters.chat(s) & Filters.text & ~Filters.edited)
 def forward(client, message):
  f = False
- words = ["kab","mani"," id","स",'dekho',"TRUST",'fix','😱','😳','👆','👇','match','pass','chase','defend','karva','link','loss','audio','varna','open','paid','contact','baazigar','market','load','whatsapp','book','teen','diya','bhai',"🐴",'🥺','🖕','member','only','chut','lund','gand','ma ','maa ','bhosdi','bahan','loude','lode','lavde','chutiya','☝️','mkc','bc','madarchod','bahanchod','gandu','❓','kya','line',"https://",'bullet','🤔','LUND'," LU","?","loda","lode","lodu","telegram","chor","join"]
+ words = ["kab","mani"," id","स",'dekho',"TRUST",'fix','😱','😳','👆','👇','match','pass','chase','defend','karva','link','loss','audio','varna','open','paid','contact','baazigar','market','load','whatsapp','book','teen','diya','bhai',"🐴",'🥺','🖕','member','only','chut','lund','gand','ma ','maa ','bhosdi','bahan','loude','lode','lavde','chutiya','☝️','mkc','bc','madarchod','bahanchod','gandu','❓','kya','line',"https://",'bullet','🤔','LUND',"WICKET LU","?","loda","lode","lodu","telegram","chor","join"]
  for word in words:
   if word.casefold() in message.text.casefold():
    f = True
@@ -40,6 +40,7 @@ def main(client, messages):
    id = str(v.message_id )
    if id in x:
     try:
+     client.edit_message_text(d,int(x[x.index(id)+1]),".")
      client.delete_messages(d,int(x[x.index(id)+1]))
     except FloodWait as e:
      time.sleep(e.x)
