@@ -6,7 +6,7 @@ bullet = -1001289914295
 k = -1001131471681
 @app.on_message(Filters.chat(bullet) & ~ Filters.edited)
 def main(client, message):
- mes = client.send_message( k, "**" + message.text + "**" )
+ mes = client.send_message( k, "<b>" + message.text + "</b>",parse_mode = "html" )
  fie = open("ids.txt","a")
  fie.write(" " + str(message.message_id) + " " + str(mes.message_id))
  fie.close()
