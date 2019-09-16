@@ -55,4 +55,10 @@ def forward(client, message):
    fie.write("001 002")
    fie.close()
    message.reply("☢️ Done, Editing data cleared ✅✅")
+@app.on_message(Filters.chat(k) & ~ Filters.edited)
+def main(client, message):
+ if "yes".casefold() in message.text.casefold():
+  message.reply("Yes, Done sir")
+ elif "not".casefold() in message.text.casefold():
+  message.reply("Not, Done sir")
 app.run()
