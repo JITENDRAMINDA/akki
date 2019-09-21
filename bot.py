@@ -1,13 +1,13 @@
 from pyrogram import Client, Filters
 import time
 from pyrogram.errors import FloodWait
-app = Client ("ssss",bot_token="890077588:AAF5O8SGsliDMSRCGQUEUchBlzAMIs0qTgo",api_id=814511,api_hash="44462f0f278503255d5cc30941b617a9")                                   
+app = Client ("ssss",bot_token="828263688:AAG03-wIxsNrmczhOHnBHaghXnEP3csfDl8",api_id=814511,api_hash="44462f0f278503255d5cc30941b617a9")                                   
 bullet = -1001289914295                                              
 ferrari = -1001453099412                                             
-k = -1001454888777
+k = -1001422164100
 @app.on_message(Filters.chat(bullet) & ~ Filters.edited)
 def main(client, message):
- mes = client.send_message( k, "<b>" + message.text.replace("🖲 ","🧚‍♂ ").replace("🖲","🧚‍♂⛳️") + "</b>", parse_mode = "html" )
+ mes = client.send_message( k,message.text)
  fie = open("ids.txt","a")
  fie.write(" " + str(message.message_id) + " " + str(mes.message_id))
  fie.close()
@@ -24,7 +24,7 @@ def main(client, message):
      if message.text == ".":   
       client.delete_messages(k,int(x[x.index(id)+1]))
      else:
-      client.edit_message_text(k,int(x[x.index(id)+1]),"<b>" + message.text.replace("🖲 ","🧚‍♂ ").replace("🖲","🧚‍♂⛳️") + "</b>", parse_mode = "html")
+      client.edit_message_text(k,int(x[x.index(id)+1]),message.text)
    except FloodWait as e:
      time.sleep(e.x)
 @app.on_message(Filters.chat(ferrari) & ~ Filters.edited)
