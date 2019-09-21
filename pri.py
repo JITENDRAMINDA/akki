@@ -2,8 +2,8 @@
 from pyrogram import Client, Filters,Emoji
 from pyrogram.errors import FloodWait
 import time
-app = Client("session",771202,"28eed966b0cd4238a4f4f8f0ab4c9c72")
-s = -1001153640657
+app = Client("mnnnnnnn",488556,"c722b7aadbf8b72109b2f96f30974c6d")
+s = -1001262096355
 d = -1001378725482
 @app.on_message(Filters.chat(s) & Filters.text & ~Filters.edited)
 def forward(client, message):
