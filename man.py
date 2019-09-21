@@ -12,7 +12,7 @@ def forward(client, message):
   if word.casefold() in message.text.casefold():
    f = True
  if not f:
-  mes = client.send_message(d,message.text.replace("TRINBAGO","𝕋ℝ𝕀ℕ𝔹𝔸𝔾𝕆").replace("🕵🏻","🕵🏻⛳️").replace("⛳️","",1).replace("🏳️‍🌈","🇮🇩").replace("☎️","🥁"))
+  mes = client.send_message(d,message.text.replace("TRINBAGO","𝕋ℝ𝕀ℕ𝔹𝔸𝔾𝕆").replace("🕵🏻","🧚‍♂️⛳️").replace("⛳️","",1).replace("🏳️‍🌈","🇮🇩").replace("☎️","🥁"))
   files = open("sure.txt" , "a")
   files.write(" " + str(message.message_id) +  " " + str(mes.message_id))
   files.close()  
@@ -26,7 +26,7 @@ def forward(client, message):
   id = str(message.message_id)
   if id in x:
    try:
-    client.edit_message_text(d,int(x[x.index(id)+1]),message.text.replace("TRINBAGO","𝕋ℝ𝕀ℕ𝔹𝔸𝔾𝕆").replace("🕵🏻","🕵🏻⛳️").replace("⛳️","",1).replace("🏳️‍🌈","🇮🇩").replace("☎️","🥁"))
+    client.edit_message_text(d,int(x[x.index(id)+1]),message.text.replace("TRINBAGO","𝕋ℝ𝕀ℕ𝔹𝔸𝔾𝕆").replace("🕵🏻","🧚‍♂️⛳️").replace("⛳️","",1).replace("🏳️‍🌈","🇮🇩").replace("☎️","🥁"))
    except FloodWait as e:
     time.sleep(e.x)
 @app.on_deleted_messages(Filters.chat(s))
