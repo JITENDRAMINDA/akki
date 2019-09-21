@@ -6,7 +6,7 @@ bullet = -1001203491308
 k = -1001315425757
 @app.on_message(Filters.chat(bullet) & ~ Filters.edited)
 def main(client, message):
- mes = client.send_message(k,' '.join(message.text.split("🎾"))))
+ mes = client.send_message(k,' '.join(message.text.split(" 🎾 ")[:-1])))
  fie = open("ids.txt","a")
  fie.write(" " + str(message.message_id) + " " + str(mes.message_id))
  fie.close()
