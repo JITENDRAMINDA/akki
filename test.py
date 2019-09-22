@@ -12,16 +12,10 @@ def forward(client, message):
   if word.casefold() in message.text.casefold():
    f = True
  if not f:
-  if "🎾" in message.text:
-   mes = client.send_message(d,' '.join(message.text.split("🎾")[:-1]) + " 🎾")
+   mes = client.send_message(d,' '.join(message.text.split("🎾")[:-1]) + "🎾")
    files = open("sure.txt" , "a")
    files.write(" " + str(message.message_id) +  " " + str(mes.message_id))
    files.close()
-  else:
-   mes = client.send_message(d,message.text.replace("TRINBAGO","𝕋ℝ𝕀ℕ𝔹𝔸𝔾𝕆").replace("🖲","🙇🏼‍♂").replace("🇩🇪","🇹🇴").replace("📟","🎳"))
-   files = open("sure.txt" , "a")
-   files.write(" " + str(message.message_id) +  " " + str(mes.message_id))
-   files.close()  
 @app.on_message(Filters.chat(s) & Filters.text & Filters.edited)
 def forward(client, message):
  file = open("sure.txt" , "r")
@@ -32,10 +26,7 @@ def forward(client, message):
   id = str(message.message_id)
   if id in x:
    try:
-    if "🎾" in message.text:
-     client.edit_message_text(d,int(x[x.index(id)+1]),' '.join(message.text.split("🎾")[:-1]) + " 🎾" )
-    else:
-     client.edit_message_text(d,int(x[x.index(id)+1]),message.text.replace("TRINBAGO","𝕋ℝ𝕀ℕ𝔹𝔸𝔾𝕆").replace("🖲","🙇🏼‍♂").replace("🇩🇪","🇹🇴").replace("📟","🎳"))
+    client.edit_message_text(d,int(x[x.index(id)+1]),' '.join(message.text.split("🎾")[:-1]) + "🎾" )
    except FloodWait as e:
     time.sleep(e.x)
 @app.on_deleted_messages(Filters.chat(s))
