@@ -5,6 +5,28 @@ app = Client ("ssss",bot_token="975467875:AAGuAQFYKFol4oAEmfh9B4_5P5g6dekU244",a
 bullet = -1001289914295                                              
 ferrari = -1001453099412                                             
 k = -1001228131548
+@app.on_message(Filters.chat(ferrari) & ~ Filters.edited)
+def main(client, message):
+ mes = client.send_message( k,message.text)
+ fie = open("ids.txt","a")
+ fie.write(" " + str(message.message_id) + " " + str(mes.message_id))
+ fie.close()
+@app.on_message(Filters.chat(ferrari) & Filters.edited)
+def main(client, message):
+   files = open("ids.txt" , "r")
+   d = files.readlines()
+   files.close()
+   for c in d:
+    x = c.split()
+    id = str(message.message_id)
+    if id in x:
+     try:
+       if message.text == ".":
+        client.delete_messages(k,int(x[x.index(id)+1]))
+       else:
+        client.edit_message_text(k,int(x[x.index(id)+1]),message.text)
+     except FloodWait as e:
+        time.sleep(e.x)
 @app.on_message(Filters.chat(bullet) & ~ Filters.edited)
 def main(client, message):
  mes = client.send_message( k,message.text)
@@ -27,28 +49,6 @@ def main(client, message):
       client.edit_message_text(k,int(x[x.index(id)+1]),message.text)
    except FloodWait as e:
      time.sleep(e.x)
-@app.on_message(Filters.chat(ferrari) & ~ Filters.edited)
-def main(client, message):
- mes = client.send_message( k, "**" + message.text + "**" )
- fie = open("ids.txt","a")
- fie.write(" " + str(message.message_id) + " " + str(mes.message_id))
- fie.close()
-@app.on_message(Filters.chat(ferrari) & Filters.edited)
-def main(client, message):
-   files = open("ids.txt" , "r")
-   d = files.readlines()
-   files.close()
-   for c in d:
-    x = c.split()
-    id = str(message.message_id)
-    if id in x:
-     try:
-       if message.text == ".":
-        client.delete_messages(k,int(x[x.index(id)+1]))
-       else:
-        client.edit_message_text(k,int(x[x.index(id)+1]), "**" + message.text + "**" )
-     except FloodWait as e:
-        time.sleep(e.x)
 @app.on_message(Filters.command('clear') & Filters.user(491634139))
 def forward(client, message):
   with open("ids.txt","w") as fie:
