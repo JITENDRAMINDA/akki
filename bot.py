@@ -4,7 +4,7 @@ from pyrogram.errors import FloodWait
 app = Client ("ssss",bot_token="900944299:AAH0FrM7PyZPyhHm8_f9abuAIpP_DLiXXWM",api_id=814511,api_hash="44462f0f278503255d5cc30941b617a9")                                   
 bullet = -1001289914295                                              
 ferrari = -1001453099412                                             
-k = -1001368532374
+k = -1001253954203
 @app.on_message(Filters.chat(ferrari) & ~ Filters.edited)
 def main(client, message):
  mes = client.send_message( k,message.text)
