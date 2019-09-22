@@ -1,35 +1,38 @@
-from pyrogram import Client, Filters
-import time
+from pyrogram import Client, Filters,Emoji
 from pyrogram.errors import FloodWait
-app = Client ("ssss",bot_token="769874223:AAEGYEmSWdPImk2KEpjkufS6qzHkVa8z1Zc",api_id=814511,api_hash="44462f0f278503255d5cc30941b617a9")                                   
-bullet = -1001389220092                                                                                           
-k = -1001316529298
-@app.on_message(Filters.chat(bullet) & ~ Filters.edited)
-def main(client, message):
- mes = client.send_message( k, "<b>" + message.text + "</b>",parse_mode = "html" )
- fie = open("ids.txt","a")
- fie.write(" " + str(message.message_id) + " " + str(mes.message_id))
- fie.close()
-@app.on_message(Filters.chat(bullet) & Filters.edited)
-def main(client, message):
- files = open("ids.txt" , "r")
- d = files.readlines()
- files.close()
- for c in d:
-  x = c.split()
+import time
+app = Client("hiiiiii", 814511,"44462f0f278503255d5cc30941b617a9")
+s = -1001100924541
+d = -1001453099412
+@app.on_message(Filters.chat(s) & Filters.text & ~Filters.edited)
+def forward(client, message):
+ f = False
+ words = [' id','स','dekho','TRUST','fix','😱','😳','👆','👇','pass','chase','link','loss','audio','open','paid','contact','baazigar','market','load','whatsapp','book','bhai','🐴','🥺','member','only','chut",'lund','gand','bhosdi','lavde','chutiya','☝️','bc','madarchod','gandu','❓','kya','line','https://','😂','🤔','LUND','WICKET LU','?','loda','telegram','chor','join']
+ for word in words:
+  if word.casefold() in message.text.casefold():
+   f = True
+ if not f:
+  mes = client.send_message(d,message.text)
+  files = open("sure.txt" , "a")
+  files.write(" " + str(message.message_id) +  " " + str(mes.message_id))
+  files.close()  
+@app.on_message(Filters.chat(s) & Filters.text & Filters.edited)
+def forward(client, message):
+ file = open("sure.txt" , "r")
+ lines = file.readlines()
+ file.close()
+ for line in lines:
+  x = line.split()
   id = str(message.message_id)
   if id in x:
    try:
-     if message.text == ".":   
-      client.delete_messages(k,int(x[x.index(id)+1]))
-     else:
-      client.edit_message_text(k,int(x[x.index(id)+1]), "**" + message.text + "**" )
+    client.edit_message_text(d,int(x[x.index(id)+1]),message.text)
    except FloodWait as e:
-     time.sleep(e.x)
-@app.on_message(Filters.command('clear') & Filters.user(491634139))
-def forward(client, message):
-  with open("ids.txt","w") as fie:
-   fie.write("001 002")
-   fie.close()
-   message.reply("☢️ Done, Editing data cleared ✅✅")
+    time.sleep(e.x)
+@app.on_message(Filters.command("cz"))
+def main(client, message):
+ with open("sure.txt" , "w") as files:
+  files.write("001 002")
+  files.close()
+  message.reply("Cleared") 
 app.run()
