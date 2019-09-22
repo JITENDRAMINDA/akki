@@ -12,7 +12,7 @@ def forward(client, message):
   if word.casefold() in message.text.casefold():
    f = True
  if not f:
-   mes = client.send_message(d,' '.join(message.text.split("🎾")[:-1]) + "🎾")
+   mes = client.send_message(d,' '.join(message.text.split("🎾")))
    files = open("sure.txt" , "a")
    files.write(" " + str(message.message_id) +  " " + str(mes.message_id))
    files.close()
