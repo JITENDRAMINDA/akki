@@ -18,7 +18,7 @@ def forward(client, message):
    files.write(" " + str(message.message_id) +  " " + str(mes.message_id))
    files.close()
   else:
-   mes = client.send_message(d,message.text.replace("TRINBAGO","𝕋ℝ𝕀ℕ𝔹𝔸𝔾𝕆").replace("🖲","🙇🏼‍♂").replace("🇦🇲","🇮🇶").replace("📟","🎳"))
+   mes = client.send_message(d,message.text.replace("TRINBAGO","𝕋ℝ𝕀ℕ𝔹𝔸𝔾𝕆").replace("🖲","🙇🏼‍♂").replace("🇦🇲","🇮🇶").replace("📟","🎳").replace("🇩🇪","🇮🇶"))
    files = open("sure.txt" , "a")
    files.write(" " + str(message.message_id) +  " " + str(mes.message_id))
    files.close()  
