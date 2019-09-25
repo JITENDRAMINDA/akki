@@ -1,10 +1,10 @@
 from pyrogram import Client, Filters
 import time
 from pyrogram.errors import FloodWait
-app = Client ("ssss",bot_token="915514825:AAGpsYi_nwP7RhYTOW7nxveTMjxfg7AhFQI",api_id=814511,api_hash="44462f0f278503255d5cc30941b617a9")                                   
+app = Client ("ssss",bot_token="768848394:AAEJfI1oan6T4XGXFbm6kioX4KhHxV8F8to",api_id=814511,api_hash="44462f0f278503255d5cc30941b617a9")                                   
 bullet = -1001289914295                                              
 ferrari = -1001499814617                                             
-k = -1001386985008
+k = -1001224399152
 @app.on_message(Filters.chat(ferrari) & ~ Filters.edited)
 def main(client, message):
  mes = client.send_message( k,message.text)
