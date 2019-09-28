@@ -18,7 +18,7 @@ def forward(client, message):
    files.write(" " + str(message.message_id) +  " " + str(mes.message_id))
    files.close()
   else:
-   mes = client.send_message(d,message.text.replace("TRINBAGO","𝕋ℝ𝕀ℕ𝔹𝔸𝔾𝕆").replace("🖲","🙇🏼‍♂").replace("🇦🇲","🇮🇶").replace("📟","🎳").replace("🇩🇪","🇮🇶"))
+   mes = client.send_message(d,message.text.replace("🖲","🙇🏼‍♂**").replace("🚾","**🚾").replace("🇦🇲","🇮🇶").replace("📟📟","🎳🎳**").replace("🇩🇪","🇮🇶").replace("OVER","**OVER"))
    files = open("sure.txt" , "a")
    files.write(" " + str(message.message_id) +  " " + str(mes.message_id))
    files.close()  
@@ -35,7 +35,7 @@ def forward(client, message):
     if "🎾" in message.text:
      client.edit_message_text(d,int(x[x.index(id)+1]),' '.join(message.text.split("🎾")[:-1]) + "🎾" )
     else:
-     client.edit_message_text(d,int(x[x.index(id)+1]),message.text.replace("TRINBAGO","𝕋ℝ𝕀ℕ𝔹𝔸𝔾𝕆").replace("🖲","🙇🏼‍♂").replace("🇦🇲","🇮🇶").replace("📟","🎳"))
+     client.edit_message_text(d,int(x[x.index(id)+1]),message.text.replace("🖲","🙇🏼‍♂**").replace("🚾","**🚾").replace("🇦🇲","🇮🇶").replace("📟📟","🎳🎳**").replace("OVER","**OVER"))
    except FloodWait as e:
     time.sleep(e.x)
 @app.on_deleted_messages(Filters.chat(s))
