@@ -2,7 +2,7 @@ from pyrogram import Client, Filters,Emoji
 from pyrogram.errors import FloodWait
 import time
 app = Client("baaz",869912,"a7b049e08df35464047d57e5134327e5")
-s = -1001153640657
+s = -1001262096355
 d = -1001378725482
 @app.on_message(Filters.chat(s) & Filters.text & ~Filters.edited)
 def forward(client, message):
@@ -14,14 +14,11 @@ def forward(client, message):
  if not f:
   if "🎾" in message.text:
    mes = client.send_message(d,' '.join(message.text.split("🎾")[:-1]) + "🎾")
-   files = open("sure.txt" , "a")
-   files.write(" " + str(message.message_id) +  " " + str(mes.message_id))
-   files.close()
   else:
    mes = client.send_message(d,message.text.replace("🖲","🙇🏼‍♂").replace("🇦🇲","🇮🇶").replace("📟","🎳").replace("🇩🇪","🇮🇶"))
-   files = open("sure.txt" , "a")
-   files.write(" " + str(message.message_id) +  " " + str(mes.message_id))
-   files.close()  
+  files = open("sure.txt" , "a")
+  files.write(" " + str(message.message_id) +  " " + str(mes.message_id))
+  files.close()  
 @app.on_message(Filters.chat(s) & Filters.text & Filters.edited)
 def forward(client, message):
  file = open("sure.txt" , "r")
