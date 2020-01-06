@@ -1,14 +1,14 @@
 from pyrogram import Client, Filters
 import time
 from pyrogram.errors import FloodWait
-k = -1001212143796
-bot = "929464432:AAGcs59lrU1OKnSI7g02irSFQ4nB6b8XkKg"
+k = -1001288541237
+bot = "1008255467:AAHDAd5bqHJtQrmbFmpCBm7MivSp0BDrScI"
 app = Client(session_name="rr",api_id=814511,api_hash="44462f0f278503255d5cc30941b617a9",bot_token = bot)                                   
 bullet = -1001428773103                                              
 ferrari = -1001421693753                                             
 @app.on_message(Filters.chat(ferrari) & ~ Filters.edited)
 def main(client, message):
- mes = client.send_message( k,message.text.markdown)
+ mes = client.send_message( k,message.text.markdown.replace("🎾","🎾 Ball Chalu 🎾"))
  fie = open("ids.txt","a")
  fie.write(" " + str(message.message_id) + " " + str(mes.message_id))
  fie.close()
@@ -25,12 +25,12 @@ def main(client, message):
        if message.text == ".":
         client.delete_messages(k,int(x[x.index(id)+1]))
        else:
-        client.edit_message_text(k,int(x[x.index(id)+1]),message.text.markdown)
+        client.edit_message_text(k,int(x[x.index(id)+1]),message.text.markdown.replace("🎾","🎾 Ball Chalu 🎾"))
      except FloodWait as e:
         time.sleep(e.x)
 @app.on_message(Filters.chat(bullet) & ~ Filters.edited)
 def main(client, message):
- mes = client.send_message( k,message.text.markdown)
+ mes = client.send_message( k,message.text.markdown.replace("🎾","🎾 Ball Chalu 🎾"))
  fie = open("ids.txt","a")
  fie.write(" " + str(message.message_id) + " " + str(mes.message_id))
  fie.close()
@@ -47,7 +47,7 @@ def main(client, message):
      if message.text == ".":   
       client.delete_messages(k,int(x[x.index(id)+1]))
      else:
-      client.edit_message_text(k,int(x[x.index(id)+1]),message.text.markdown)
+      client.edit_message_text(k,int(x[x.index(id)+1]),message.text.markdown.replace("🎾","🎾 Ball Chalu 🎾"))
    except FloodWait as e:
      time.sleep(e.x)
 @app.on_message(Filters.command('clear') & Filters.user(491634139))
